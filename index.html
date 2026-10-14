@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thực hành CSS Flexbox với flex-basis, flex-grow, auto, initial và inherit.">
+    <title>Thực hành CSS | flex-basis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="#" aria-label="Flex Lab trang chủ">
+            <span class="brand-mark">F</span>
+            <span>Flex Lab</span>
+        </a>
+        <span class="course-label">CSS · FLEXBOX</span>
+    </header>
+
+    <main class="page">
+        <section class="intro" aria-labelledby="page-title">
+            <p class="eyebrow">BÀI THỰC HÀNH</p>
+            <h1>Khám phá <span>flex-basis</span></h1>
+            <p class="intro-copy">Đặt kích thước cơ sở cho Flex Item — rồi quan sát Flexbox điều chỉnh theo trục chính và không gian còn lại.</p>
+        </section>
+
+        <section class="concept-banner" aria-label="Khái niệm flex-basis">
+            <span class="concept-icon">↔</span>
+            <p><strong>flex-basis</strong> đặt kích thước ban đầu trên trục chính. <code>flex-grow</code> và <code>flex-shrink</code> có thể điều chỉnh kích thước cuối cùng.</p>
+            <span class="axis-chip">ROW → NGANG</span>
+        </section>
+
+        <section class="examples" aria-label="Các ví dụ flex-basis">
+            <article class="example-card" aria-labelledby="px-title">
+                <div class="card-heading">
+                    <div><p class="eyebrow">VÍ DỤ 01 · ĐƠN VỊ PX</p><h2 id="px-title">Các basis khác nhau</h2></div>
+                    <span class="property-chip">row</span>
+                </div>
+                <p class="card-copy">Mỗi Flex Item có kích thước cơ sở riêng trên trục ngang.</p>
+                <div class="demo-box">
+                    <div class="flex-row px-demo" aria-label="Item với flex-basis 200px, 100px và 150px">
+                        <div class="flex-item"><span>Item 1</span><code>200px</code></div>
+                        <div class="flex-item"><span>Item 2</span><code>100px</code></div>
+                        <div class="flex-item"><span>Item 3</span><code>150px</code></div>
+                    </div>
+                    <p class="demo-note">flex-basis: 200px · 100px · 150px</p>
+                </div>
+                <pre class="code"><code>.item1 { flex-basis: 200px; }
+.item2 { flex-basis: 100px; }
+.item3 { flex-basis: 150px; }</code></pre>
+            </article>
+
+            <article class="example-card" aria-labelledby="percent-title">
+                <div class="card-heading">
+                    <div><p class="eyebrow">VÍ DỤ 02 · PHẦN TRĂM</p><h2 id="percent-title">Basis bằng 50%</h2></div>
+                    <span class="property-chip">50%</span>
+                </div>
+                <p class="card-copy">Mỗi item bắt đầu với basis bằng một nửa chiều rộng của container.</p>
+                <div class="demo-box">
+                    <div class="flex-row percent-demo" aria-label="Hai item với flex-basis 50%">
+                        <div class="flex-item"><span>Item 1</span><code>50%</code></div>
+                        <div class="flex-item"><span>Item 2</span><code>50%</code></div>
+                    </div>
+                    <p class="demo-note">Gap 10px khiến flex-shrink điều chỉnh một chút để vừa hàng.</p>
+                </div>
+                <pre class="code"><code>.item {
+  flex-basis: 50%;
+}</code></pre>
+            </article>
+
+            <article class="example-card" aria-labelledby="column-title">
+                <div class="card-heading">
+                    <div><p class="eyebrow">VÍ DỤ 03 · TRỤC DỌC</p><h2 id="column-title">Đổi flex-direction</h2></div>
+                    <span class="property-chip">column</span>
+                </div>
+                <p class="card-copy">Với column, basis định cỡ theo chiều dọc thay vì chiều ngang.</p>
+                <div class="demo-box">
+                    <div class="flex-column" aria-label="Ba item theo cột, mỗi item có flex-basis 100px">
+                        <div class="flex-item"><span>Item 1</span><code>100px</code></div>
+                        <div class="flex-item"><span>Item 2</span><code>100px</code></div>
+                        <div class="flex-item"><span>Item 3</span><code>100px</code></div>
+                    </div>
+                    <p class="demo-note">flex-direction: column · main axis là chiều dọc.</p>
+                </div>
+                <pre class="code"><code>.container {
+  flex-direction: column;
+}
+.item { flex-basis: 100px; }</code></pre>
+            </article>
+
+            <article class="example-card" aria-labelledby="grow-title">
+                <div class="card-heading">
+                    <div><p class="eyebrow">VÍ DỤ 04 · FLEX-GROW</p><h2 id="grow-title">Phân chia không gian</h2></div>
+                    <span class="property-chip">1 : 2 : 1</span>
+                </div>
+                <p class="card-copy">Mỗi item bắt đầu ở 100px; phần trống được chia theo tỉ lệ grow.</p>
+                <div class="demo-box">
+                    <div class="flex-row grow-demo" aria-label="Ba item có flex-basis 100px với flex-grow lần lượt 1, 2 và 1">
+                        <div class="flex-item grow-one"><span>Item 1</span><code>grow 1</code></div>
+                        <div class="flex-item grow-two"><span>Item 2</span><code>grow 2</code></div>
+                        <div class="flex-item grow-one"><span>Item 3</span><code>grow 1</code></div>
+                    </div>
+                    <p class="demo-note">Basis 100px mỗi item · flex-grow phân phối phần còn lại.</p>
+                </div>
+                <pre class="code"><code>.item1 { flex-basis: 100px; flex-grow: 1; }
+.item2 { flex-basis: 100px; flex-grow: 2; }
+.item3 { flex-basis: 100px; flex-grow: 1; }</code></pre>
+            </article>
+        </section>
+
+        <section class="values-card" aria-labelledby="values-title">
+            <div class="card-heading">
+                <div><p class="eyebrow">CÁC GIÁ TRỊ ĐẶC BIỆT</p><h2 id="values-title">auto · initial · inherit</h2></div>
+                <span class="property-chip">basis</span>
+            </div>
+            <div class="values-grid">
+                <div class="value-example">
+                    <code class="value-name">auto</code>
+                    <p>Dùng kích thước width hoặc kích thước phù hợp của nội dung. Ở đây mỗi item đặt width: 150px.</p>
+                    <div class="auto-demo" aria-label="flex-basis auto, width 150 pixels">
+                        <div class="flex-item">width: 150px</div><div class="flex-item">width: 150px</div>
+                    </div>
+                </div>
+                <div class="value-example">
+                    <code class="value-name">initial</code>
+                    <p>Đặt giá trị ban đầu của thuộc tính: flex-basis trở về auto.</p>
+                    <pre class="code"><code>flex-basis: initial;
+/* tương đương auto */</code></pre>
+                </div>
+                <div class="value-example">
+                    <code class="value-name">inherit</code>
+                    <p>Kế thừa flex-basis 120px từ cha. Thực tế, thường đặt basis trực tiếp trên Flex Item.</p>
+                    <div class="inherit-demo" aria-label="Flex Item kế thừa flex-basis 120 pixels từ container">
+                        <div class="flex-item">inherit · 120px</div><div class="flex-item">inherit · 120px</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="takeaway" aria-label="Tóm tắt flex-basis">
+            <span class="takeaway-label">GHI NHỚ</span>
+            <p><strong>row</strong> → basis theo chiều ngang <span>·</span> <strong>column</strong> → basis theo chiều dọc <span>·</span> <code>flex-grow</code> chia phần không gian dư</p>
+        </section>
+
+        <footer class="site-footer">
+            <span>Thực hành CSS Flexbox</span>
+            <span>HTML · CSS</span>
+        </footer>
+    </main>
+</body>
+</html>

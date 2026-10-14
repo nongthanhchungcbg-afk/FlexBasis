@@ -1,0 +1,533 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+    color-scheme: light;
+    font-family: "DM Sans", Arial, sans-serif;
+    color: #182b32;
+    background: #f4f7f6;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    --ink: #182b32;
+    --muted: #718184;
+    --green: #147d68;
+    --pale-green: #e4f4ef;
+    --line: #e5ece9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background:
+        radial-gradient(ellipse at 83% 0%, rgba(189, 229, 214, 0.42), transparent 34rem),
+        #f4f7f6;
+}
+
+.site-header {
+    height: 66px;
+    padding: 0 max(26px, calc((100% - 1040px) / 2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(221, 232, 227, 0.8);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.brand-mark {
+    display: grid;
+    width: 29px;
+    height: 29px;
+    place-items: center;
+    border-radius: 9px;
+    color: #fff;
+    background: var(--green);
+    font-size: 16px;
+}
+
+.course-label,
+.eyebrow,
+.takeaway-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.course-label {
+    color: #71827f;
+}
+
+.page {
+    width: min(960px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.intro {
+    padding: 34px 0 18px;
+}
+
+.eyebrow {
+    margin: 0 0 7px;
+    color: var(--green);
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1,
+.card-heading h2 {
+    font-family: "Manrope", Arial, sans-serif;
+}
+
+h1 {
+    margin-bottom: 7px;
+    font-size: clamp(30px, 4vw, 38px);
+    letter-spacing: -1.55px;
+    line-height: 1.18;
+}
+
+h1 span {
+    color: var(--green);
+}
+
+.intro-copy {
+    max-width: 700px;
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.concept-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border: 1px solid #d8eae3;
+    border-radius: 10px;
+    background: #edf7f3;
+}
+
+.concept-icon {
+    display: grid;
+    width: 29px;
+    height: 29px;
+    flex: 0 0 29px;
+    place-items: center;
+    border-radius: 8px;
+    color: var(--green);
+    background: #d9f0e7;
+    font-size: 18px;
+}
+
+.concept-banner p {
+    flex: 1;
+    margin: 0;
+    color: #536b64;
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.concept-banner strong {
+    color: #145d4e;
+    font-family: Consolas, monospace;
+}
+
+.concept-banner code,
+.takeaway code {
+    color: #236a59;
+    font-family: Consolas, monospace;
+    font-size: 10px;
+}
+
+.axis-chip,
+.property-chip {
+    flex: 0 0 auto;
+    padding: 6px 8px;
+    border: 1px solid #e0eae6;
+    border-radius: 6px;
+    color: #57736a;
+    background: rgba(255, 255, 255, 0.75);
+    font: 10px Consolas, monospace;
+}
+
+.examples {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 13px;
+}
+
+.example-card,
+.values-card {
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid #e7eeea;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 24px rgba(29, 66, 56, 0.035);
+}
+
+.card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card-heading .eyebrow {
+    margin-bottom: 4px;
+    font-size: 8px;
+}
+
+.card-heading h2 {
+    margin-bottom: 0;
+    font-size: 15px;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+}
+
+.property-chip {
+    padding: 6px 8px;
+}
+
+.card-copy {
+    min-height: 33px;
+    margin: 7px 0 10px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+.demo-box {
+    padding: 10px;
+    border: 1px solid #e7eeea;
+    border-radius: 8px;
+    background: #f8faf9;
+}
+
+.flex-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+}
+
+.flex-item {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 50px;
+    padding: 8px;
+    border: 1px solid #d6e8e1;
+    border-radius: 7px;
+    color: #1a5548;
+    background: linear-gradient(135deg, #fff 0%, #f0f9f5 100%);
+    box-shadow: 0 3px 9px rgba(28, 91, 72, 0.045);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.flex-item code {
+    padding: 3px 4px;
+    border-radius: 4px;
+    color: #16715e;
+    background: #e4f4ef;
+    font: 9px Consolas, monospace;
+    white-space: nowrap;
+}
+
+.px-demo .flex-item {
+    flex-shrink: 0;
+}
+
+.px-demo {
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.px-demo .flex-item:nth-child(1) {
+    flex-basis: 200px;
+}
+
+.px-demo .flex-item:nth-child(2) {
+    flex-basis: 100px;
+}
+
+.px-demo .flex-item:nth-child(3) {
+    flex-basis: 150px;
+}
+
+.percent-demo .flex-item {
+    flex-basis: 50%;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    height: 325px;
+    padding: 6px;
+    border: 1px dashed #8cb7a9;
+    border-radius: 7px;
+    background-color: #edf6f2;
+    background-image: radial-gradient(#d6e7e0 0.7px, transparent 0.7px);
+    background-size: 11px 11px;
+}
+
+.flex-column .flex-item {
+    flex: 0 0 100px;
+    min-height: 0;
+    justify-content: flex-start;
+    padding: 0 12px;
+}
+
+.grow-demo {
+    width: 100%;
+    height: 82px;
+}
+
+.grow-demo .flex-item {
+    flex-basis: 100px;
+    min-height: 0;
+}
+
+.grow-one {
+    flex-grow: 1;
+}
+
+.grow-two {
+    flex-grow: 2;
+}
+
+.demo-note {
+    margin: 7px 0 0;
+    color: #7a8985;
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+.code {
+    margin: 9px 0 0;
+    padding: 9px 10px;
+    overflow-x: auto;
+    border-radius: 7px;
+    color: #dcebe6;
+    background: #1b302e;
+    font: 9px/1.55 Consolas, "Courier New", monospace;
+    white-space: pre;
+}
+
+.values-card {
+    margin-top: 13px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 13px;
+}
+
+.value-example {
+    min-width: 0;
+    padding: 11px;
+    border: 1px solid #e9efec;
+    border-radius: 8px;
+    background: #f8faf9;
+}
+
+.value-name {
+    color: #147d68;
+    font: 700 12px Consolas, monospace;
+}
+
+.value-example p {
+    min-height: 43px;
+    margin: 6px 0 8px;
+    color: #718184;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.value-example .code {
+    margin-top: 0;
+    font-size: 8px;
+}
+
+.auto-demo,
+.inherit-demo {
+    display: flex;
+    gap: 5px;
+    padding: 6px;
+    overflow: hidden;
+    border: 1px dashed #a8c3b9;
+    border-radius: 6px;
+    background: #edf6f2;
+}
+
+.auto-demo .flex-item {
+    width: 150px;
+    flex: 0 0 auto;
+    min-height: 35px;
+    padding: 5px;
+    font-size: 8px;
+}
+
+.inherit-demo {
+    flex-basis: 120px;
+}
+
+.inherit-demo .flex-item {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: inherit;
+    min-height: 35px;
+    padding: 5px;
+    font-size: 8px;
+}
+
+.takeaway {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    padding: 11px 14px;
+    border-radius: 9px;
+    background: #1b302e;
+}
+
+.takeaway-label {
+    flex: 0 0 auto;
+    color: #91d4b9;
+    font-size: 8px;
+}
+
+.takeaway p {
+    margin: 0;
+    color: #d5e4df;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.takeaway p span {
+    padding: 0 4px;
+    color: #8ba39a;
+}
+
+.takeaway strong {
+    color: #92dbbd;
+    font-family: Consolas, monospace;
+}
+
+.takeaway code {
+    color: #b7d4c8;
+}
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 2px 20px;
+    color: #899793;
+    font-size: 9px;
+}
+
+@media (max-width: 650px) {
+    .site-header {
+        height: 60px;
+        padding: 0 18px;
+    }
+
+    .page {
+        width: min(100% - 28px, 500px);
+    }
+
+    .intro {
+        padding: 29px 0 15px;
+    }
+
+    .intro-copy {
+        font-size: 11px;
+    }
+
+    .concept-banner {
+        flex-wrap: wrap;
+    }
+
+    .concept-banner p {
+        flex-basis: calc(100% - 48px);
+    }
+
+    .axis-chip {
+        margin-left: 41px;
+    }
+
+    .examples {
+        grid-template-columns: 1fr;
+    }
+
+    .card-copy {
+        min-height: 0;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-example p {
+        min-height: 0;
+    }
+
+    .auto-demo,
+    .inherit-demo {
+        width: fit-content;
+        max-width: 100%;
+    }
+
+    .takeaway {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 380px) {
+    .course-label {
+        font-size: 8px;
+    }
+
+    .page {
+        width: calc(100% - 22px);
+    }
+
+    .concept-banner {
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .example-card,
+    .values-card {
+        padding: 13px;
+    }
+
+    .demo-box {
+        padding: 8px;
+    }
+}
